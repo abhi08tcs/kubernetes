@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: tomcat
+  labels:
+    name: tomcat-pod
+    version: new-release
+spec:
+  containers:
+    - name: tomcat
+      image: tomcat:jdk17
+      ports:
+       - containerPort: 8080
