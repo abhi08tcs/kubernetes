@@ -14,7 +14,8 @@ spec:
       name: tomcat
   template:
     metadata:
-      name: tomcat
+      labels:
+        name: tomcat
     spec:
       containers:
         - name: tomcat
