@@ -6,7 +6,7 @@ metadata:
   labels:
     name: tomcat-webserver
 spec:
-  minReadySeconds: 5
+  minReadySeconds: 2
   replicas: 3
   selector:
     matchLabels:
@@ -14,11 +14,11 @@ spec:
   template:
     metadata:
       name: tomcat
-  spec:
-    containers:
-      - name: tomcat
-        image: tomcat:jdk17
-        ports:
-          - containerPort: 80
-            protocol: TCP
+    spec:
+      containers:
+        - name: tomcat
+          image: tomcat:jdk17
+          ports:
+            - containerPort: 80
+              protocol: TCP
 
