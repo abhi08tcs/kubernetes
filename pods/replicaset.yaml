@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata: 
-  name: tomcat
+  name: tomcat-rs
   labels:
     name: tomcat-webserver
 spec:
@@ -16,9 +16,9 @@ spec:
       name: tomcat
   spec:
     containers:
-      name: tomcat
-      image: tomcat:jdk17
-      ports:
-        containerPort: 80
-        protocol: TCP
+      - name: tomcat
+        image: tomcat:jdk17
+        ports:
+          - containerPort: 80
+            protocol: TCP
 
