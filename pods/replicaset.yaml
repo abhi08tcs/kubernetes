@@ -1,0 +1,24 @@
+---
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata: 
+  name: tomcat
+  labels:
+    name: tomcat-webserver
+spec:
+  minReadySeconds: 5
+  replicas: 3
+  selector:
+    matchLabels:
+      name: tomcat
+  template:
+    metadata:
+      name: tomcat
+  spec:
+    containers:
+      name: tomcat
+      image: tomcat:jdk17
+      ports:
+        containerPort: 80
+        protocol: TCP
+
