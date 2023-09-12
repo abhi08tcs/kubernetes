@@ -1,0 +1,23 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nop-pod-app
+  labels:
+    name: nop-app
+spec:
+  args:
+    - https://github.com/nopSolutions/nopCommerce/releases/download/release-4.60.4/nopCommerce_4.60.4_NoSource_linux_x64.zip
+  command:
+    - dotnet
+    - Nop.Web.dll
+  env:
+    - name: nop
+      purpose: learning
+  containers:
+    - name: nop
+      image: alpine:3
+  ports:
+    - containerPort: 5000
+      protocol: TCP
+  
