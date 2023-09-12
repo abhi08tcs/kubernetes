@@ -1,10 +1,11 @@
 ---
 apiVersion: v1
 kind: Service
-metadata: 
+metadata:
+  name: nginx-svc-np
   labels:
-    name: nginx-svc-nodeport
-    purpose: to connect to multiple nodes
+    app: nginx
+    purpose: svcdemo
 spec:
   type: NodePort
   selector:
