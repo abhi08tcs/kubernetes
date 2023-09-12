@@ -1,0 +1,33 @@
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata: 
+  name: webserver
+  labels:
+    name: nginx-server 
+spec:
+  schedule: '*/5 * * * *'
+  jobTemplate:
+    metadata:
+      labels:
+        name: nginxdemo
+    spec:
+      selector:
+        matchLabels:
+          name: batch
+      template:
+        metadata:
+          labels:
+            name: batch
+        spec:
+          containers:
+            - name: batchdemo
+              image: alpine
+              command:
+                - sleep
+                - 10s
+        
+
+
+ 
+              
