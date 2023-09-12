@@ -12,14 +12,12 @@ spec:
       labels:
         name: nginxdemo
     spec:
-      selector:
-        matchLabels:
-          name: batch
       template:
         metadata:
           labels:
             name: batch
         spec:
+          restartPolicy: OnFailure
           containers:
             - name: batchdemo
               image: alpine
