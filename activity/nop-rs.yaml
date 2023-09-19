@@ -19,7 +19,8 @@ spec:
       app: nopcommerce
   template:
     metadata:
-      name: nopcommerce
+      labels:
+        app: nopcommerce
     spec:
       containers:
         - name: nop
