@@ -15,14 +15,14 @@ spec:
   template:
     metadata:
       name: nopcommerce
-  spec:
-    containers:
-      - name: nop
-        image: abhishek08tcs/nopcommerce
-        ports:
-          - containerPort: 80
-            protocol: TCP
-        env:
-          - name: purpose
-            value: learning
+    spec:
+      containers:
+        - name: nop
+          image: abhishek08tcs/nopcommerce
+          ports:
+            - containerPort: 80
+              protocol: TCP
+          env:
+            - name: purpose
+              value: learning
             
