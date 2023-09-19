@@ -23,12 +23,12 @@ spec:
         app: nopcommerce
     spec:
       containers:
-        - name: nop
+        - name: nop-commerce
           image: abhishek08tcs/nopcommerce:51
+          env:
+          - name: purpose
+          value: learning
           ports:
             - containerPort: 80
               protocol: TCP
-          env:
-            - name: purpose
-              value: learning
             
