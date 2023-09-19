@@ -28,7 +28,7 @@ spec:
           env:
             - name: purpose
               value: learning
-              ports:
-                - containerPort: 80
-                  protocol: TCP
+          ports:
+            - containerPort: 80
+              protocol: TCP
             
