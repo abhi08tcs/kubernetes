@@ -26,9 +26,9 @@ spec:
         - name: nop-commerce
           image: abhishek08tcs/nopcommerce:51
           env:
-          - name: purpose
-          value: learning
-          ports:
-            - containerPort: 80
-              protocol: TCP
+            - name: purpose
+              value: learning
+              ports:
+                - containerPort: 80
+                  protocol: TCP
             
