@@ -14,7 +14,7 @@ metadata:
 spec:
   containers:
     - name: nop-commerce
-      image: abhishek08tcs/nopcommerce
+      image: abhishek08tcs/nopcommerce:51
       env:
         - name: purpose
           value: learning
