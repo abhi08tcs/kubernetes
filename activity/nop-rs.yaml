@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
         - name: nop
-          image: abhishek08tcs/nopcommerce
+          image: abhishek08tcs/nopcommerce:51
           ports:
             - containerPort: 80
               protocol: TCP
