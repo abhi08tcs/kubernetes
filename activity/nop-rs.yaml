@@ -9,7 +9,7 @@ kind: ReplicaSet
 metadata: 
   name: nop-app
   labels:
-    app: nop
+    app: nopcommerce
   namespace: dev
 spec:
   minReadySeconds: 2
