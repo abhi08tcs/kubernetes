@@ -10,6 +10,8 @@ kind: Deployment
 metadata: 
   name: ds-deploy
   namespace: prod
+  annotations:
+    kubernetes.io/change-cause: "image is updated to v3.0"
 spec:
   minReadySeconds: 1
   replicas: 3
@@ -28,9 +30,23 @@ spec:
     spec:
       containers:
         - name: deploysample
-          image: abhishek08tcs/deploy-sample-rolling:v1.0
+          image: abhishek08tcs/deploy-sample-rolling:v3.0
           ports:
             - name: webport
               containerPort: 80
               protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: webport
+            failureThreshold: 3
+            periodSeconds: 1
+            successThreshold: 1
+          readinessProbe:
+            httpGet:
+              path: /
+              port: webport
+            failureThreshold: 2
+            periodSeconds: 2
+            successThreshold: 2
       
