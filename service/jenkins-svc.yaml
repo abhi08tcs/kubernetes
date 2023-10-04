@@ -1,0 +1,16 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: jenkins-svc
+  labels:
+    app: jenkins-service
+    purpose: demo
+spec:
+  type: ClusterIP
+  selector:
+    app: jenkins-svc
+  ports:
+    - targetPort: 8080
+      port: 80
+     

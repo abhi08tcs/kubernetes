@@ -5,7 +5,7 @@ metadata:
   name: nop-deploy
 spec:
   minReadySeconds: 5
-  replicas: 4
+  replicas: 2
   selector:
     matchLabels:
       app: nop
