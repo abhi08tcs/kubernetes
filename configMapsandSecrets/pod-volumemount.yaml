@@ -1,0 +1,26 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: cm-s-volume-mount
+spec:
+  containers:
+    - name: alpinec
+      image: alpine
+      command:
+        - sleep
+        - 1d
+      volumeMounts:
+        - name: username-vol
+          mountPath: /creds/username
+        - name: password-vol
+          mountPath: /creds/password
+  volumes:
+    - name: username-vol
+      configMap:
+        name: userinfo-cm
+    - name: password-vol
+      secret:
+        secretName: password-secret
+
+       
